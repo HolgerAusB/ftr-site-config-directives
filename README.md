@@ -49,14 +49,18 @@ Please feel free to add information on directives and their use.
 | `replace_string  `    |          | &#9989;       | [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#replace-string-string-to-find-replacement-string) |
 
 ### Authentication
-| Directive               | Usage    | Graby support | Description |
+This is a feature of wallabag and is not supported by fivefilters yet. You can store your credentials of example.com in your wallabag UI.<br>
+Example: [monde-diplomatique.fr](https://github.com/fivefilters/ftr-site-config/blob/593813c180f874ddb0918184131bb42fda04ebe3/monde-diplomatique.fr.txt#L31-L44)
+
+**DO NOT set** your credentials directly in example.com.txt, here you should only define the field names for username and password
+| Directive               | Usage    | Graby support | Description / Example |
 |-------------------------|----------|:-------------:|-------------|
-| `login_extra_fields`    |          | &#9989;       |             |
-| `login_password_field`  |          | &#9989;       |             |
-| `login_uri`             |          | &#9989;       |             |
-| `login_username_field`  |          | &#9989;       |             |
-| `not_logged_in_xpath`   |          | &#9989;       |             |
-| `requires_login`        |          | &#9989;       |             |
+| `login_extra_fields`    |          | &#9989;       |  `fieldname=value`      |
+| `login_password_field`  |          | &#9989;       |  field name for password [not your password]           |
+| `login_uri`             |          | &#9989;       |  `https://example.com/login`           |
+| `login_username_field`  |          | &#9989;       |  field name for username [not your username or email]  |
+| `not_logged_in_xpath`   |          | &#9989;       |  If XPath matches anything, wallabag tries to log in   |
+| `requires_login`        |          | &#9989;       |  `yes` (standard: `no`)           |
 
 ### HTTP headers
 See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-header-header-name-header-value), possibly any header.
