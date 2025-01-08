@@ -53,14 +53,14 @@ This is a feature of wallabag and is not supported by fivefilters yet. You can s
 Example: [monde-diplomatique.fr](https://github.com/fivefilters/ftr-site-config/blob/593813c180f874ddb0918184131bb42fda04ebe3/monde-diplomatique.fr.txt#L31-L44)
 
 **DO NOT set** your credentials directly in example.com.txt, here you should only define the field names for username and password
-| Directive               | Usage    | Graby support | Description / Example |
-|-------------------------|----------|:-------------:|-------------|
-| `login_extra_fields`    |          | &#9989;       |  `fieldname=value`      |
-| `login_password_field`  |          | &#9989;       |  field name for password [not your password]           |
-| `login_uri`             |          | &#9989;       |  `https://example.com/login`           |
-| `login_username_field`  |          | &#9989;       |  field name for username [not your username or email]  |
-| `not_logged_in_xpath`   |          | &#9989;       |  If XPath matches anything, wallabag tries to log in   |
-| `requires_login`        |          | &#9989;       |  `yes` (standard: `no`)           |
+| Directive               | Usage             | Graby support | Description / Example |
+|-------------------------|------------------------------|:-------------:|--------------------------------------------------------|
+| `login_extra_fields`    | `fieldname=value`            | &#9989;       |                                                        |
+| `login_password_field`  |                              | &#9989;       |  field name for password [not your password]           |
+| `login_uri`             |  `https://example.com/login` | &#9989;       |                                                        |
+| `login_username_field`  |                              | &#9989;       |  field name for username [not your username or email]  |
+| `not_logged_in_xpath`   |                              | &#9989;       |  If XPath matches anything, wallabag tries to log in   |
+| `requires_login`        |  `yes`                       | &#9989;       |  (standard: `no`)                                      |
 
 ### HTTP headers
 See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-header-header-name-header-value), possibly any header.
@@ -69,11 +69,11 @@ See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-he
 > Is this case sensitive?
 
 | Directive                 | Usage    | Graby support | Description |
-|---------------------------|----------|:-------------:|-------------|
-| `http_header(Cookie)`     |          | &#9989;       |             |
-| `http_header(User-Agent)` |          | &#9989;       |             |
-| `http_header(accept)`     |          | &#9989;       |             |
-| `http_header(referer)`    |          | &#9989;       |             |
+|---------------------------|-----------------------------------------------|:----------:|-------------|
+| `http_header(Cookie)`     | `cookiename=value[; cookiename2=value][;...]` | &#9989;    |             |
+| `http_header(User-Agent)` | `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0`  | &#9989;    |            |
+| `http_header(accept)`     |                                               | &#9989;    |             |
+| `http_header(referer)`    |  `https://example.com`                        | &#9989;    |             |
 
 ### Test-URLs
 | Directive               | Usage    | Graby support | Description |
