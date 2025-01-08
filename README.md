@@ -89,7 +89,7 @@ See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-he
 | `src_lazy_load_attr`      | `src_lazy_load_attr: data-full-src` | &#9989; |                                 | slate.fr.txt      |
 | `footnotes`               | `footnotes: no`             |               |                                   | jetzt.sueddeutsche.de.txt |
 | `move_into()`             | `move_into([XPath]): [XPath]` |             |                                   | smithsonianmag.com.txt  |
-| `wrap_in()`               | `wrap_in([tag]): [XPath]`   | &#9989;       |                                   | smithsonianmag.com.txt  |
+| `wrap_in()`               | `wrap_in(<node>): [XPath]`<br> \<node\> could be one of<br>`blockquote\|div\|p` | &#9989;       | wallabag only! The matching part will be wrapped into a `<blockquote>`, `<div>` or `<p>`node                   | smithsonianmag.com.txt  |
 | `dissolve`                | `dissolve: [XPath]`         |               |                                   | bbc.com.txt       |
 | `span`                    | `span: [XPath]`             |               |??, possibly mistake?              | cloud.google.com.txt  |
 
