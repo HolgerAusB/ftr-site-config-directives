@@ -49,14 +49,18 @@ Please feel free to add information on directives and their use.
 | `replace_string  `    |          | &#9989;       | [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#replace-string-string-to-find-replacement-string) |
 
 ### Authentication
-| Directive               | Usage    | Graby support | Description |
-|-------------------------|----------|:-------------:|-------------|
-| `login_extra_fields`    |          | &#9989;       |             |
-| `login_password_field`  |          | &#9989;       |             |
-| `login_uri`             |          | &#9989;       |             |
-| `login_username_field`  |          | &#9989;       |             |
-| `not_logged_in_xpath`   |          | &#9989;       |             |
-| `requires_login`        |          | &#9989;       |             |
+This is a feature of wallabag and is not supported by fivefilters yet. You can store your credentials of example.com in your wallabag UI.<br>
+Example: [monde-diplomatique.fr](https://github.com/fivefilters/ftr-site-config/blob/593813c180f874ddb0918184131bb42fda04ebe3/monde-diplomatique.fr.txt#L31-L44)
+
+**DO NOT set** your credentials directly in example.com.txt, here you should only define the field names for username and password
+| Directive               | Usage             | Graby support | Description / Example |
+|-------------------------|------------------------------|:-------------:|--------------------------------------------------------|
+| `login_extra_fields`    | `fieldname=value`            | &#9989;       |                                                        |
+| `login_password_field`  |                              | &#9989;       |  field name for password [not your password]           |
+| `login_uri`             |  `https://example.com/login` | &#9989;       |                                                        |
+| `login_username_field`  |                              | &#9989;       |  field name for username [not your username or email]  |
+| `not_logged_in_xpath`   |                              | &#9989;       |  If XPath matches anything, wallabag tries to log in   |
+| `requires_login`        |  `yes`                       | &#9989;       |  (standard: `no`)                                      |
 
 ### HTTP headers
 See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-header-header-name-header-value), possibly any header.
@@ -65,11 +69,11 @@ See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-he
 > Is this case sensitive?
 
 | Directive                 | Usage    | Graby support | Description |
-|---------------------------|----------|:-------------:|-------------|
-| `http_header(Cookie)`     |          | &#9989;       |             |
-| `http_header(User-Agent)` |          | &#9989;       |             |
-| `http_header(accept)`     |          | &#9989;       |             |
-| `http_header(referer)`    |          | &#9989;       |             |
+|---------------------------|-----------------------------------------------|:----------:|-------------|
+| `http_header(Cookie)`     | `cookiename=value[; cookiename2=value][;...]` | &#9989;    |             |
+| `http_header(User-Agent)` | `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0`  | &#9989;    |            |
+| `http_header(accept)`     |                                               | &#9989;    |             |
+| `http_header(referer)`    |  `https://example.com`                        | &#9989;    |             |
 
 ### Test-URLs
 | Directive               | Usage    | Graby support | Description |
@@ -89,7 +93,7 @@ See [docs](https://help.fivefilters.org/full-text-rss/site-patterns.html#http-he
 | `src_lazy_load_attr`      | `src_lazy_load_attr: data-full-src` | &#9989; |                                 | slate.fr.txt      |
 | `footnotes`               | `footnotes: no`             |               |                                   | jetzt.sueddeutsche.de.txt |
 | `move_into()`             | `move_into([XPath]): [XPath]` |             |                                   | smithsonianmag.com.txt  |
-| `wrap_in()`               | `wrap_in([tag]): [XPath]`   | &#9989;       |                                   | smithsonianmag.com.txt  |
+| `wrap_in()`               | `wrap_in(<node>): [XPath]`<br> \<node\> could be one of<br>`blockquote\|div\|p` | &#9989;       | wallabag only! The matching part will be wrapped into a `<blockquote>`, `<div>` or `<p>`node                   | smithsonianmag.com.txt  |
 | `dissolve`                | `dissolve: [XPath]`         |               |                                   | bbc.com.txt       |
 | `span`                    | `span: [XPath]`             |               |??, possibly mistake?              | cloud.google.com.txt  |
 
